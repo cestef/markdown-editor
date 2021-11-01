@@ -32,7 +32,7 @@ const Editor = ({
                     value={text}
                     onValueChange={(e) => setText(e)}
                     highlight={(e) => hljs.highlight(e, { language: "md" }).value}
-                    padding={"1.75rem"}
+                    padding={"1rem"}
                 />
             </div>
         </ScrollSyncPane>
