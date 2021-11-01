@@ -1,13 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html,
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: "Montserrat", sans-serif;
+    height: 100%;
+    margin: 0px;
+    overflow-x: hidden;
+}
+#root {
+    height: 100%;
+}
+
+.editor {
+    @apply bg-gray-200 border-none resize-none overflow-auto outline-none shadow-none rounded-md text-2xl w-1/2 dark:bg-gray-600 dark:bg-opacity-10 p-7 h-full m-5 dark:text-white;
+}
+
+.dark {
+    @apply bg-gray-800;
+}
+
+.white {
+    @apply bg-white;
+}
+
+#preview > h1  {
+    @apply text-7xl my-4 border-b-2 border-gray-300 pb-5 mb-5;
+}
+
+h2 {
+    @apply text-4xl my-4;
+}
+h3 {
+    @apply text-2xl my-2;
+}
+h4 {
+    @apply text-xl my-1;
+}
+
+ul {
+    @apply list-disc;
+}
+li {
+    @apply ml-5;
+}
+#preview > blockquote {
+    border-left: 4px solid #ccc;
+    padding-left: 8px;
+}
+
+#preview > hr {
+    @apply my-5 border-t-2 border-gray-300;
+}
+
+a {
+    @apply text-blue-600;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    @apply bg-gray-600 rounded p-2;
+}
+
+#preview > p {
+    @apply my-3 leading-10;
+}
+
+pre > code {
+    @apply bg-transparent rounded-none p-0;
+}
+
+pre {
+    @apply bg-gray-600 rounded p-3;
+    white-space: pre !important;
+}
+
+.npm__react-simple-code-editor__textarea {
+    white-space: pre !important;
+    overflow: auto !important;
 }
