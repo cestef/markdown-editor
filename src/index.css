@@ -13,7 +13,7 @@ body {
 }
 
 .editor {
-    @apply bg-gray-200 border-none resize-none overflow-auto outline-none shadow-none rounded-md text-2xl w-1/2 dark:bg-gray-600 dark:bg-opacity-10 p-7 h-full m-5 dark:text-white;
+    @apply bg-gray-200 border-none resize-none overflow-auto outline-none shadow-none rounded-md text-2xl w-1/2 dark:bg-gray-600 dark:bg-opacity-10 p-7 h-full m-3 dark:text-white;
 }
 
 .dark {
@@ -58,15 +58,16 @@ a {
 }
 
 code {
-    @apply bg-gray-600 rounded p-2;
+    @apply dark:bg-gray-600 rounded p-2 bg-gray-300;
 }
 
 #preview > p {
-    @apply my-3 leading-10;
+    @apply my-3;
+    line-height: 3rem;
 }
 
 pre > code {
-    @apply bg-transparent rounded-none p-0;
+    @apply bg-transparent rounded-none p-0 text-white;
 }
 
 pre {
