@@ -19,6 +19,7 @@
     "scripts": {
         "start": "craco start",
         "build": "craco build",
+        "build:deploy": "yarn build && rm -rf /var/www/markdown-editor && mv build /var/www/markdown-editor",
         "test": "craco test",
         "eject": "react-scripts eject"
     },
