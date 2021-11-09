@@ -14,10 +14,10 @@ const md = new Remarkable("full", {
             return hljs.highlightAuto(str).value;
         } catch {}
 
-        return ""; // use external default escaping
+        return "";
     },
+    html: true,
 });
-
 const Preview = ({ text }: { text: string }) => {
     return (
         <ScrollSyncPane>

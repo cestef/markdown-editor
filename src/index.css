@@ -44,6 +44,9 @@ ul {
 li {
     @apply ml-5;
 }
+img {
+    @apply mb-10;
+}
 #preview > blockquote {
     border-left: 4px solid #ccc;
     padding-left: 8px;

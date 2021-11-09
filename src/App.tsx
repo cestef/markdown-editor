@@ -5,12 +5,22 @@ import Preview from "./components/Preview";
 import { init } from "./utils/functions";
 import { useDropzone } from "react-dropzone";
 import { ScrollSync } from "react-scroll-sync";
+import { useHotkeys } from "react-hotkeys-hook";
+import { saveAs } from "file-saver";
 
 const App = () => {
     useEffect(() => {
         init();
     }, []);
     const [text, setText] = useState("");
+    useHotkeys(
+        "ctrl+s,command+s",
+        (event, hotkeys) => {
+            event.preventDefault();
+            saveAs(new Blob([text], { type: "text/plain" }), "Document.md");
+        },
+        { enableOnTags: ["TEXTAREA"] }
+    );
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop: async (files) => {
             const content = await files[0].text();
@@ -24,7 +34,7 @@ const App = () => {
             <div className="flex items-center justify-center">
                 <div
                     {...getRootProps()}
-                    className="mt-8 -mb-8 bg-gray-300 bg-opacity-5 p-5 rounded-md hover:bg-gray-500 hover:bg-opacity-50"
+                    className="mt-8 -mb-8 bg-gray-300 bg-opacity-5 p-5 rounded-md hover:bg-gray-500 hover:bg-opacity-50 cursor-pointer"
                 >
                     <input {...getInputProps()} accept=".md,.txt" multiple={false} />
                     {isDragActive ? (
